@@ -52,7 +52,7 @@ class Activity : AppCompatActivity() {
         }
 
         //Glide, es una bliblioteca importada de github el cual tiene la funcion de hacer funcionar los gifs en imageView
-        Glide.with(this).asGif().load(R.drawable.spamtom).into(configBinding.imageView)
+        Glide.with(this).asGif().load(R.drawable.jevil).into(configBinding.imageView)
         onStart()
     }
 
@@ -112,6 +112,13 @@ class Activity : AppCompatActivity() {
             classForFramePin.tarjetaDeUbi()
         }
 
+        configBinding.gamblinButton.setOnClickListener {
+            val intencion = Intent(this, AdivinaScreenAct::class.java)
+            intencion.apply {
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            }
+            startActivity(intencion)
+        }
 
     }
     //Metodo que me ayuda a ahorrar la creacion de tantos toasts
