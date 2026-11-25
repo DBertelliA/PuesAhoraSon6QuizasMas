@@ -35,6 +35,9 @@
         <activity
             android:name=".AdivinaScreenAct"
             android:exported="false" />
+        <activity
+            android:name=".VictoryScreen"
+            android:exported="false" />
     </application>
 
 </manifest>

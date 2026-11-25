@@ -1,8 +1,10 @@
 package com.example.aplicacioncon4botones;
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -19,7 +21,7 @@ class AdivinaScreenAct : AppCompatActivity(){
 
     private var suma = 0
 
-    private var boolean = false;
+    private var booleano = false;
 
     private var numerin = 2
 
@@ -41,8 +43,24 @@ class AdivinaScreenAct : AppCompatActivity(){
         confBind.txtResultado.visibility = View.VISIBLE;
 
         confBind.imageButton.setOnClickListener {
-            suma = 0
-            launcherAsync()
+            if(!booleano) {
+                confBind.txtResultado.visibility = View.VISIBLE
+                launcherAsync()  //comienza el juego
+            }else{
+                Toast.makeText(this, "No puedes volver a pulsar hasta que se acabe la accion",
+                    Toast.LENGTH_LONG).show()
+            }
+        }
+        confBind.backInit.setOnClickListener {
+            if(!booleano) {
+                intent = Intent(this, Activity::class.java).apply {
+                    Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_SINGLE_TOP
+                }
+                startActivity(intent)
+            }else{
+                Toast.makeText(this, "No puedes volver hasta que se acabe la accion",
+                    Toast.LENGTH_LONG).show()
+            }
         }
     }
 
@@ -54,7 +72,10 @@ class AdivinaScreenAct : AppCompatActivity(){
 
         //un hilo para mostrar los cambios de imagenes simulando una tirada de dado
         for(i in 1..5){
-            hiloAsync.schedule({ throwInTime() },
+            hiloAsync.schedule({
+                booleano = true
+                throwInTime()
+            },
                 msc * i.toLong(), TimeUnit.MILLISECONDS)
         }
 
@@ -98,13 +119,39 @@ class AdivinaScreenAct : AppCompatActivity(){
 
     fun viewResult(){
         confBind.txtResultado.text = suma.toString()
+        verifier(suma)
+        booleano = false;
+        runOnUiThread{
+            if(numerin == 1){
+                Toast.makeText(this@AdivinaScreenAct, "Has adivinado el numero", Toast.LENGTH_LONG).show()
+                intent = Intent(this, VictoryScreen::class.java).apply {
+                    Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_SINGLE_TOP
+                }
+                startActivity(intent)
+            }else if (numerin == 0){
+                Toast.makeText(this@AdivinaScreenAct, "No has adivinado el numero", Toast.LENGTH_LONG).show()
+            }else if(numerin == -1){
+                Toast.makeText(this@AdivinaScreenAct, "Ta vacio", Toast.LENGTH_LONG).show()
+            }
+        }
+
     }
 
+    private fun verifier(sum: Int) {
+        var valorC = confBind.NumeroField.text.toString().toIntOrNull()
+
+        if(valorC != null) {
+            if (suma == valorC) {
+                numerin = 1
+            } else {
+                numerin = 0
+            }
+        }else{
+            numerin = -1
+        }
 
 
-
-
-
+    }
 
 
 }
