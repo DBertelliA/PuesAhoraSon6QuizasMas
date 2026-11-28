@@ -9,12 +9,13 @@
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="179dp"
+        android:layout_height="272dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnExample"
+        app:layout_constraintEnd_toEndOf="@+id/btnExample"
+        app:layout_constraintStart_toStartOf="@+id/btnExample"
+        app:layout_constraintTop_toTopOf="@+id/btnExample"
+        app:layout_constraintVertical_bias="0.504" />
 
     <Button
         android:id="@+id/btnExample"
@@ -36,6 +37,84 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.897" />
+
+    <RadioGroup
+        android:id="@+id/grupoChiste"
+        android:layout_width="115dp"
+        android:layout_height="731dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.003">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:text="Chiste1" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:text="chiste2" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:text="chiste3" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:text="chiste4" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="chiste5" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:text="chiste6" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:text="chiste7" />
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:text="chiste8" />
+
+        <RadioButton
+            android:id="@+id/radioButton9"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:text="chiste9" />
+
+        <RadioButton
+            android:id="@+id/radioButton10"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:text="chiste10" />
+
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:text="Aleatorio" />
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

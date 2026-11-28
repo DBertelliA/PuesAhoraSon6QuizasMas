@@ -8,6 +8,9 @@ import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
+import android.widget.RadioButton
+import android.widget.Toast
+import androidx.core.view.children
 import com.example.aplicacioncon4botones.databinding.ActividadChistesBinding
 import java.util.Locale
 import kotlin.math.floor
@@ -35,6 +38,7 @@ class ActividadChistes : AppCompatActivity() {
         handler = Handler(Looper.getMainLooper())
         binding.progressBar.visibility = View.VISIBLE
         binding.btnExample.visibility = View.GONE
+        binding.grupoChiste.visibility = View.GONE
 
         Thread{
             Thread.sleep(3000)
@@ -44,6 +48,7 @@ class ActividadChistes : AppCompatActivity() {
                 speakMeDescription(description)
                 Log.i(MYTAG,"Se ejecuta correctamente el hilo")
                 binding.btnExample.visibility = View.VISIBLE
+                binding.grupoChiste.visibility = View.VISIBLE
 
             }
         }.start()
@@ -65,8 +70,17 @@ class ActividadChistes : AppCompatActivity() {
 
 
     private fun initEvent() {
+        var selec = "Aleatorio"
+        binding.grupoChiste.check(R.id.radioButton11)
+
         binding.btnExample.setOnClickListener{
-            val chiste = numeroAleConChiste()
+            binding.grupoChiste.setOnCheckedChangeListener { group, checkedId ->
+                val seleccionado = findViewById<RadioButton>(checkedId)
+                selec = seleccionado.text.toString();
+                //Toast.makeText(this, seleccionado.text.toString(), Toast.LENGTH_LONG).show()
+            }
+
+            val chiste = numeroAleConChiste(selec)
 
             val currentTime = System.currentTimeMillis()
 
@@ -99,19 +113,36 @@ class ActividadChistes : AppCompatActivity() {
         textToSpeech.speak(s, TextToSpeech.QUEUE_FLUSH, null, null)
     }
 
-    private fun numeroAleConChiste(): String{
-        var i : Int = (floor(Math.random() * 10)).toInt()
-        when(i) {
-            0 -> return resources.getString(R.string.chiste1);
-            1 -> return resources.getString(R.string.chiste2);
-            2 -> return resources.getString(R.string.chiste3);
-            3 -> return resources.getString(R.string.chiste4);
-            4 -> return resources.getString(R.string.chiste5);
-            5 -> return resources.getString(R.string.chiste6);
-            6 -> return resources.getString(R.string.chiste7);
-            7 -> return resources.getString(R.string.chiste8);
-            8 -> return resources.getString(R.string.chiste9);
-            9 -> return resources.getString(R.string.chiste10);
+    private fun numeroAleConChiste(seleccion : String): String{
+        Toast.makeText(this, seleccion, Toast.LENGTH_LONG).show()
+        if(seleccion != "Aleatorio"){
+            when(seleccion) {
+                "chiste1" -> return resources.getString(R.string.chiste1);
+                "chiste2" -> return resources.getString(R.string.chiste2);
+                "chiste3" -> return resources.getString(R.string.chiste3);
+                "chiste4" -> return resources.getString(R.string.chiste4);
+                "chiste5" -> return resources.getString(R.string.chiste5);
+                "chiste6" -> return resources.getString(R.string.chiste6);
+                "chiste7" -> return resources.getString(R.string.chiste7);
+                "chiste8" -> return resources.getString(R.string.chiste8);
+                "chiste9" -> return resources.getString(R.string.chiste9);
+                "chiste10" -> return resources.getString(R.string.chiste10);
+            }
+        }else {
+            var i: Int = (floor(Math.random() * 10)).toInt()
+
+            when (i) {
+                0 -> return resources.getString(R.string.chiste1);
+                1 -> return resources.getString(R.string.chiste2);
+                2 -> return resources.getString(R.string.chiste3);
+                3 -> return resources.getString(R.string.chiste4);
+                4 -> return resources.getString(R.string.chiste5);
+                5 -> return resources.getString(R.string.chiste6);
+                6 -> return resources.getString(R.string.chiste7);
+                7 -> return resources.getString(R.string.chiste8);
+                8 -> return resources.getString(R.string.chiste9);
+                9 -> return resources.getString(R.string.chiste10);
+            }
         }
         return "Error en el chiste"
     }

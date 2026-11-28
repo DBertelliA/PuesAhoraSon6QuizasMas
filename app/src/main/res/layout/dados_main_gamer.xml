@@ -16,34 +16,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vaso" />
 
+
     <ImageView
         android:id="@+id/imagview_dado1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/dado1" />
 
     <ImageView
         android:id="@+id/imagview_dado2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        app:layout_constraintEnd_toEndOf="@+id/imagview_dado1"
-        app:layout_constraintTop_toBottomOf="@+id/imagview_dado1"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308"
         app:srcCompat="@drawable/dado1" />
 
     <ImageView
         android:id="@+id/imagview_dado3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        app:layout_constraintStart_toStartOf="@+id/imagview_dado2"
-        app:layout_constraintTop_toBottomOf="@+id/imagview_dado2"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/dado1" />
 
 
@@ -57,26 +66,25 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagview_dado3"
-        app:layout_constraintVertical_bias="0.511" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.749" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="361dp"
         android:layout_height="57dp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_resultado"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagview_dado3">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/NumeroField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:hint="Pon un numero del 3 al 18 antes de tirar" />
+            android:hint="Pon un numero del 3 al 18 antes de tirar"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

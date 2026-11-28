@@ -52,7 +52,7 @@ class Activity : AppCompatActivity() {
         }
 
         //Glide, es una bliblioteca importada de github el cual tiene la funcion de hacer funcionar los gifs en imageView
-        Glide.with(this).asGif().load(R.drawable.jevil).into(configBinding.imageView)
+        Glide.with(this).asGif().load(R.drawable.jevil).into(configBinding.jevilsView)
         onStart()
     }
 
