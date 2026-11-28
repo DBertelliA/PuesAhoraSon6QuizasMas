@@ -8,6 +8,42 @@
     android:layout_height="match_parent"
     tools:context=".Activity">
 
+    <ImageView
+        android:id="@+id/imagVF1"
+        android:layout_width="413dp"
+        android:layout_height="450dp"
+        android:src="@drawable/backgjev"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imagVF2"
+        android:layout_width="413dp"
+        android:layout_height="450dp"
+        android:src="@drawable/backgjev"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.563" />
+
+    <ImageView
+        android:id="@+id/imagVF3"
+        android:layout_width="409dp"
+        android:layout_height="374dp"
+        android:src="@drawable/backgjev"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="387dp"
@@ -143,6 +179,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.551" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
