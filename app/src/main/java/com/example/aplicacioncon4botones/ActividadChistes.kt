@@ -100,7 +100,7 @@ class ActividadChistes : AppCompatActivity() {
     }
 
     private fun numeroAleConChiste(): String{
-        var i : Int = (floor(Math.random() * 6)).toInt()
+        var i : Int = (floor(Math.random() * 10)).toInt()
         when(i) {
             0 -> return resources.getString(R.string.chiste1);
             1 -> return resources.getString(R.string.chiste2);
@@ -108,6 +108,10 @@ class ActividadChistes : AppCompatActivity() {
             3 -> return resources.getString(R.string.chiste4);
             4 -> return resources.getString(R.string.chiste5);
             5 -> return resources.getString(R.string.chiste6);
+            6 -> return resources.getString(R.string.chiste7);
+            7 -> return resources.getString(R.string.chiste8);
+            8 -> return resources.getString(R.string.chiste9);
+            9 -> return resources.getString(R.string.chiste10);
         }
         return "Error en el chiste"
     }
