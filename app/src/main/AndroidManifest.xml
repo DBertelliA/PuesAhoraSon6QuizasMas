@@ -41,6 +41,9 @@
         <activity
             android:name=".ActividadChistes"
             android:exported="false" />
+        <activity
+            android:name=".configuraciones.ConfigOptions"
+            android:exported="false" />
     </application>
 
 </manifest>

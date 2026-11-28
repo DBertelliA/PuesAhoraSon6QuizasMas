@@ -39,6 +39,8 @@ class ActividadChistes : AppCompatActivity() {
         binding.progressBar.visibility = View.VISIBLE
         binding.btnExample.visibility = View.GONE
         binding.grupoChiste.visibility = View.GONE
+        binding.btnBack.visibility = View.GONE
+
 
         Thread{
             Thread.sleep(3000)
@@ -49,6 +51,7 @@ class ActividadChistes : AppCompatActivity() {
                 Log.i(MYTAG,"Se ejecuta correctamente el hilo")
                 binding.btnExample.visibility = View.VISIBLE
                 binding.grupoChiste.visibility = View.VISIBLE
+                binding.btnBack.visibility = View.VISIBLE
 
             }
         }.start()

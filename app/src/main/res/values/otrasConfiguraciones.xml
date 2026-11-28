@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fichero_compalta">sharedConfg</string>
+
+    <string name="nombreDeUsuario"> </string>
+    <string name="Pais"> </string>
+    <string name="Fondo">S</string>
+    <string name="Fecha"> </string>
+    <string name="amable">N</string>
+
+
+
+</resources>

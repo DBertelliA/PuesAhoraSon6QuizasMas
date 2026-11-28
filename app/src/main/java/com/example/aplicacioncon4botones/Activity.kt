@@ -4,15 +4,18 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.provider.AlarmClock
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aplicacioncon4botones.databinding.ActivityMainBinding
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.gif.GifDrawable
 import com.example.aplicacioncon4botones.configuraciones.ConfigForCall
 import com.example.aplicacioncon4botones.configuraciones.ConfigForPing
 import com.example.aplicacioncon4botones.configuraciones.ConfigForURL
+import com.example.aplicacioncon4botones.configuraciones.ConfigOptions
 
 /**
  * Esta seccion de la aplicacion es utilizado para la llamada de metodos
@@ -54,6 +57,7 @@ class Activity : AppCompatActivity() {
         //Glide, es una bliblioteca importada de github el cual tiene la funcion de hacer funcionar los gifs en imageView
         Glide.with(this).asGif().load(R.drawable.jevil).into(configBinding.jevilsView)
 
+        configBinding.jevilsViewHurt.visibility = View.GONE
         Glide.with(this).asGif().load(R.drawable.backgjev).into(configBinding.imagVF1)
         Glide.with(this).asGif().load(R.drawable.backgjev).into(configBinding.imagVF2)
         Glide.with(this).asGif().load(R.drawable.backgjev).into(configBinding.imagVF3)
@@ -65,6 +69,21 @@ class Activity : AppCompatActivity() {
      */
     override fun onStart() {
         super.onStart()
+        configBinding.jevilsView.setOnClickListener {
+            configBinding.jevilsView.visibility =  View.GONE
+            configBinding.jevilsViewHurt.visibility = View.VISIBLE
+            Thread{
+                Thread.sleep(1000)
+                runOnUiThread {
+                    configBinding.jevilsView.visibility = View.VISIBLE
+                    configBinding.jevilsViewHurt.visibility = View.GONE
+
+                }
+            }.start()
+        }
+
+
+
 
         configBinding.callButton.setOnClickListener {
             val intencion = Intent(this, ConfigForCall::class.java)
@@ -125,6 +144,14 @@ class Activity : AppCompatActivity() {
         }
         configBinding.chisteButton.setOnClickListener {
             val intencion = Intent(this, ActividadChistes::class.java)
+            intencion.apply {
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            }
+            startActivity(intencion)
+        }
+
+        configBinding.configButton.setOnClickListener {
+            val intencion = Intent(this, ConfigOptions::class.java)
             intencion.apply {
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_SINGLE_TOP)
             }
