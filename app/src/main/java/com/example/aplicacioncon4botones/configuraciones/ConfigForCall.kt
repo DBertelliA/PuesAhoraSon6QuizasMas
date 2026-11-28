@@ -1,14 +1,15 @@
-package com.example.aplicacioncon4botones
+package com.example.aplicacioncon4botones.configuraciones
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.aplicacioncon4botones.Activity
+import com.example.aplicacioncon4botones.CallScreen
+import com.example.aplicacioncon4botones.R
 import com.example.aplicacioncon4botones.databinding.ChangePhoneBinding
 import com.google.i18n.phonenumbers.NumberParseException
 import com.google.i18n.phonenumbers.PhoneNumberUtil
@@ -109,7 +110,7 @@ class ConfigForCall : AppCompatActivity() {
     //Esto incia los ficheros compartidos (Sin misterio)
     private fun inicioDeLosShared(){
         var nombreFich = getString(R.string.fitch_preferences)
-        this.shareFich = getSharedPreferences(nombreFich, Context.MODE_PRIVATE)
+        this.shareFich = getSharedPreferences(nombreFich, MODE_PRIVATE)
     }
 
     //Este metodo es para ahorrar codigo y solo es la funcion para implementar la escritura del telefono en el fichero compartido

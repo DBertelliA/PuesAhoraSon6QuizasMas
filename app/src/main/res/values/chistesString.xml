@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chiste1">   Esto era uno, que era tan tonto, tan tonto, tan tonto, que echó una carrera
+    el sólo y quedó segundo</string>
+    <string name="chiste2"> 1 </string>
+    <string name="chiste3"> 2 </string>
+    <string name="chiste4"> 3 </string>
+    <string name="chiste5"> 4 </string>
+    <string name="chiste6"> 5 </string>
+    <string name="chiste7"> 6 </string>
+    <string name="chiste8"> 7 </string>
+    <string name="chiste9"> 8 </string>
+    <string name="chiste10"> 9 </string>
+
+    <string name="describe">Señores, miren, un boton para contar chistes, wao, que sorprendente..., es el unico boton de toda la pantalla actualmente, wao... No me pagan lo suficiente para esto</string>
+
+</resources>

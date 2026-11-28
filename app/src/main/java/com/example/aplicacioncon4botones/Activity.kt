@@ -1,18 +1,18 @@
 package com.example.aplicacioncon4botones
 
 import android.content.Intent
-import android.graphics.Color
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.graphics.toColor
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.aplicacioncon4botones.databinding.ActivityMainBinding
 import com.bumptech.glide.Glide
+import com.example.aplicacioncon4botones.configuraciones.ConfigForCall
+import com.example.aplicacioncon4botones.configuraciones.ConfigForPing
+import com.example.aplicacioncon4botones.configuraciones.ConfigForURL
 
 /**
  * Esta seccion de la aplicacion es utilizado para la llamada de metodos
@@ -114,6 +114,13 @@ class Activity : AppCompatActivity() {
 
         configBinding.gamblinButton.setOnClickListener {
             val intencion = Intent(this, AdivinaScreenAct::class.java)
+            intencion.apply {
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            }
+            startActivity(intencion)
+        }
+        configBinding.chisteButton.setOnClickListener {
+            val intencion = Intent(this, ActividadChistes::class.java)
             intencion.apply {
                 addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP and Intent.FLAG_ACTIVITY_SINGLE_TOP)
             }

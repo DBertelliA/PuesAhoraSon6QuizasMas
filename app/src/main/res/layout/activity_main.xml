@@ -47,10 +47,10 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
+        app:layout_constraintVertical_bias="0.698" />
 
     <Button
         android:id="@+id/URLbutton"
@@ -61,52 +61,66 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.698" />
 
     <Button
         android:id="@+id/alarmButton"
-        android:layout_width="85dp"
-        android:layout_height="78dp"
+        android:layout_width="102dp"
+        android:layout_height="96dp"
         android:background="@drawable/alarm_icon"
         android:text="@string/alarma_2_minutos"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937" />
+        app:layout_constraintVertical_bias="0.892" />
 
     <Button
         android:id="@+id/ubicationButton"
-        android:layout_width="88dp"
-        android:layout_height="84dp"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
         android:background="@drawable/pin_icon"
         android:text="@string/ubicaci_n"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.965"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.899" />
+        app:layout_constraintVertical_bias="0.895" />
 
     <Button
         android:id="@+id/gamblinButton"
-        android:layout_width="88dp"
-        android:layout_height="84dp"
+        android:layout_width="95dp"
+        android:layout_height="98dp"
         android:background="@drawable/gambing"
         android:text="@string/ubicaci_n"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintVertical_bias="0.706" />
+
+    <Button
+        android:id="@+id/chisteButton"
+        android:layout_width="100dp"
+        android:layout_height="93dp"
+        android:background="@drawable/chiste_icon"
+        android:text="@string/ubicaci_n"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

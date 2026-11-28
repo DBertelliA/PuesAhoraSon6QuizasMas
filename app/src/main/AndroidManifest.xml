@@ -30,13 +30,16 @@
             android:name=".CallScreen"
             android:exported="false" />
         <activity
-            android:name=".ConfigForCall"
+            android:name=".configuraciones.ConfigForCall"
             android:exported="false" />
         <activity
             android:name=".AdivinaScreenAct"
             android:exported="false" />
         <activity
             android:name=".VictoryScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ActividadChistes"
             android:exported="false" />
     </application>
 

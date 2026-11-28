@@ -1,10 +1,11 @@
-package com.example.aplicacioncon4botones
+package com.example.aplicacioncon4botones.configuraciones
 
 import android.content.Intent
 import android.util.Log
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.core.net.toUri
+import com.example.aplicacioncon4botones.Activity
 
 /**
  * Esta clase es dedicada a la generacion de una tarjeta para capturar texto que se introducirá en el google maps luego de darle al boton de ubicacion
